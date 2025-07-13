@@ -1,0 +1,14 @@
+# Ignore data and model outputs
+data/
+notebooks/
+*.zip
+*.ipynb
+*.keras
+
+# Streamlit temp folders
+output_image/
+uploads/
+__pycache__/
+*.pyc
+
+*.png
