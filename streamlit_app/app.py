@@ -21,7 +21,7 @@ st.markdown(
 # Load model once
 @st.cache_resource
 def load_retinopathy_model():
-    model_path = "streamlit_app/model/model.keras"
+    model_path = "streamlit_app/model/model.h5"
 
     if not os.path.exists(model_path):
         file_id = "1B581Uo8osYOQIoP6SQQogcJI5VNJJCye"
@@ -30,6 +30,7 @@ def load_retinopathy_model():
         gdown.download(url, model_path, quiet=False)
 
     return tf.keras.models.load_model(model_path)
+
 
 model = load_retinopathy_model()
 last_conv_layer = 'last_conv'  # Update if using EfficientNet later
