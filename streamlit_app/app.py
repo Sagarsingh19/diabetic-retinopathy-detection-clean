@@ -4,6 +4,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 import os
+import gdown
 from gradcam_utils import generate_and_save_gradcam
 
 # Page config
@@ -20,7 +21,15 @@ st.markdown(
 # Load model once
 @st.cache_resource
 def load_retinopathy_model():
-    return load_model('model/model.keras')
+    model_path = "streamlit_app/model/model.keras"
+
+    if not os.path.exists(model_path):
+        file_id = "160799gYOsqWzTO4m-eWo_WewILBKGMgc"
+        url = f"https://drive.google.com/uc?id={file_id}"
+        os.makedirs("streamlit_app/model", exist_ok=True)
+        gdown.download(url, model_path, quiet=False)
+
+    return tf.keras.models.load_model(model_path)
 
 model = load_retinopathy_model()
 last_conv_layer = 'last_conv'  # Update if using EfficientNet later
