@@ -11,7 +11,7 @@ st.set_page_config(page_title="Diabetic Retinopathy Detection", layout="centered
 
 # Title + header
 st.title("Diabetic Retinopathy Detection")
-st.image("assets/retina_cover.png", use_container_width=True)
+st.image("assets/retina_cover.png")
 st.markdown(
     "Upload a retina image below. The model will predict the Diabetic Retinopathy stage (0–4) "
     "and display a Grad-CAM heatmap showing where the model is focusing."
