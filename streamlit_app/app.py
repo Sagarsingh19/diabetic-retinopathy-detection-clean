@@ -24,7 +24,7 @@ def load_retinopathy_model():
     model_path = "streamlit_app/model/model.h5"
 
     if not os.path.exists(model_path):
-        file_id = "1B581Uo8osYOQIoP6SQQogcJI5VNJJCye"
+        file_id = "160799gYOsqWzTO4m-eWo_WewILBKGMgc"
         url = f"https://drive.google.com/uc?id={file_id}"
         os.makedirs("streamlit_app/model", exist_ok=True)
         gdown.download(url, model_path, quiet=False)
