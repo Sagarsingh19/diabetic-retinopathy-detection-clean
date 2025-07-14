@@ -21,10 +21,10 @@ st.markdown(
 # Load model once
 @st.cache_resource
 def load_retinopathy_model():
-    model_path = "streamlit_app/model/model.h5"
-
+    model_path = "streamlit_app/model/modelkeras.h5"
+    
     if not os.path.exists(model_path):
-        file_id = "160799gYOsqWzTO4m-eWo_WewILBKGMgc"
+        file_id = "1o4lM1NxdTtDvrY13JXUPE7k76hHv0drV"
         url = f"https://drive.google.com/uc?id={file_id}"
         os.makedirs("streamlit_app/model", exist_ok=True)
         gdown.download(url, model_path, quiet=False)
