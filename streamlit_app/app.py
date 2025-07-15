@@ -21,14 +21,14 @@ st.markdown(
 # Load model once
 @st.cache_resource
 def load_retinopathy_model():
-    model_path = "streamlit_app/model/compressed_model.h5"
-    url = "https://drive.google.com/uc?id=1o4lM1NxdTtDvrY13JXUPE7k76hHv0drV"
+    model_path = "streamlit_app/model/compressed_model.keras"
+    url = "https://drive.google.com/uc?id=1XCvNQPtBzrgnQmz9COtjtyWneBtjAx1n"
     
     if not os.path.exists(model_path):
         os.makedirs("streamlit_app/model", exist_ok=True)
         gdown.download(url, model_path, quiet=False)
     
-    return tf.keras.models.load_model(model_path)
+    return tf.keras.models.load_model(model_path) 
 
 
 model = load_retinopathy_model()
