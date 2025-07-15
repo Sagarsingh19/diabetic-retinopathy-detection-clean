@@ -22,7 +22,7 @@ st.markdown(
 @st.cache_resource
 def load_retinopathy_model():
     model_path = "streamlit_app/model/compressed_model.keras"
-    url = "https://drive.google.com/uc?id=159j-9aO4JIgg_rpiwXo6UYrS2l-9Mif1" 
+    url = "https://drive.google.com/uc?id=13ToVMWTOWecpZIqeGO-1ncNvFWGRe9v_"  
     
     if not os.path.exists(model_path):
         os.makedirs("streamlit_app/model", exist_ok=True)
