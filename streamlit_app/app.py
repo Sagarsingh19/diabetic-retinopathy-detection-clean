@@ -24,6 +24,7 @@ def load_retinopathy_model():
     model_path = "streamlit_app/model/compressed_model.keras"
     return tf.keras.models.load_model(model_path)
 
+
 model = load_retinopathy_model()
 last_conv_layer = 'last_conv'  # Update if using EfficientNet later
 
