@@ -21,7 +21,7 @@ st.markdown(
 # Load model once
 @st.cache_resource
 def load_retinopathy_model():
-    model_path = "streamlit_app/model/compressed_model.keras"
+    model_path = "model/compressed_model.keras"
     return tf.keras.models.load_model(model_path)
 
 
